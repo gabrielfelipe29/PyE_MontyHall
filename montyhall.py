@@ -18,9 +18,9 @@ def monty_hall(estrategia, imprimir):
     
     if estrategia is True:
         # participante elige cambiar de puerta
-        # Controla que la nueva puerta no sea la misma que la anterior
+        # Controla que la nueva puerta no sea la misma que la anterior y que no sea la puerta ya abierta
         puerta_nueva_participante=random.randint(1,3)
-        while (puerta_nueva_participante==puerta_participante):
+        while (puerta_nueva_participante==puerta_participante or puerta_nueva_participante==puerta_presentador):
             puerta_nueva_participante=random.randint(1,3)
         
         if puerta_auto == puerta_nueva_participante:
@@ -63,5 +63,5 @@ print(f"De las 100.000 veces que el participante no cambio de puerta, gano: {cor
 print(f"De las 100.000 veces que el participante cambio de puerta, gano: {correr_monty(100000,True,False)}" )
 
 # Ejecutar 1.000.0000
-#print(f"De las 1.000.000 veces que el participante no cambio de puerta, gano: {correr_monty(1000000,False,False)}" )
-#print(f"De las 1.000.000 veces que el participante cambio de puerta, gano: {correr_monty(1000000,True,False)}" )
+print(f"De las 1.000.000 veces que el participante no cambio de puerta, gano: {correr_monty(1000000,False,False)}" )
+print(f"De las 1.000.000 veces que el participante cambio de puerta, gano: {correr_monty(1000000,True,False)}" )
